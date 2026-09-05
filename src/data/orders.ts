@@ -1,0 +1,58 @@
+import type { Order } from "@/types";
+
+export const INITIAL_ORDERS: Order[] = [
+  {
+    id: "ORD1024",
+    buyer: "Delhi Craft Boutique",
+    items: [{ productId: "p1", name: "Handcrafted Chanderi Silk Saree", quantity: 3, price: 2099 }],
+    total: 6300,
+    status: "processing",
+    date: "2026-09-02T10:00:00.000Z",
+    location: "New Delhi",
+  },
+  {
+    id: "ORD1023",
+    buyer: "Meera Handicrafts",
+    items: [{ productId: "p3", name: "Handwoven Cotton Bag", quantity: 7, price: 299 }],
+    total: 2099,
+    status: "completed",
+    date: "2026-08-29T09:30:00.000Z",
+    location: "Pune",
+  },
+  {
+    id: "ORD1022",
+    buyer: "Craft House Jaipur",
+    items: [{ productId: "p8", name: "Madhubani Painted Wall Decor", quantity: 4, price: 950 }, { productId: "p2", name: "Hand-painted Terracotta Vase", quantity: 5, price: 850 }],
+    total: 8450,
+    status: "shipped",
+    date: "2026-08-25T15:45:00.000Z",
+    location: "Jaipur",
+  },
+  {
+    id: "ORD1021",
+    buyer: "Urban Bazaar Mumbai",
+    items: [{ productId: "p5", name: "Bamboo Storage Basket", quantity: 6, price: 650 }],
+    total: 3900,
+    status: "pending",
+    date: "2026-09-03T08:15:00.000Z",
+    location: "Mumbai",
+  },
+  {
+    id: "ORD1020",
+    buyer: "Rural Roots Store",
+    items: [{ productId: "p1", name: "Handcrafted Chanderi Silk Saree", quantity: 1, price: 2099 }],
+    total: 2099,
+    status: "completed",
+    date: "2026-08-18T12:00:00.000Z",
+    location: "Bhopal",
+  },
+  {
+    id: "ORD1019",
+    buyer: "Heritage Home Store",
+    items: [{ productId: "p3", name: "Handwoven Cotton Bag", quantity: 12, price: 299 }],
+    total: 3588,
+    status: "pending",
+    date: "2026-09-04T06:20:00.000Z",
+    location: "Indore",
+  },
+];
