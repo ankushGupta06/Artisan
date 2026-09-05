@@ -1,0 +1,264 @@
+@import "tailwindcss";
+
+/* ============================================================
+   ArtisanAI Design System
+   "Traditional craftsmanship + modern AI + trust + simplicity"
+   ============================================================ */
+
+@theme {
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  /* Base / neutrals — warm cream, never sterile white-grey */
+  --color-cream: #fbf5e8;
+  --color-cream-deep: #f2e6cf;
+  --color-surface: #fffdf8;
+  --color-ink: #251d14;
+  --color-ink-soft: #5b4e3d;
+  --color-ink-faint: #8d7f6b;
+  --color-line: #e6d8bd;
+
+  /* Primary — earthy deep green */
+  --color-green-900: #142a1f;
+  --color-green-700: #26492f;
+  --color-green-600: #305c3c;
+  --color-green-500: #3f7350;
+  --color-green-100: #e0ead9;
+  --color-green-50: #eef3e8;
+
+  /* Accent — terracotta */
+  --color-terracotta-700: #a8461f;
+  --color-terracotta-600: #c25a2c;
+  --color-terracotta-500: #d97d43;
+  --color-terracotta-100: #f8e2cc;
+  --color-terracotta-50: #fcefe1;
+
+  /* Secondary accent — turmeric gold, used sparingly for highlights */
+  --color-gold-600: #a9781f;
+  --color-gold-500: #c99a3e;
+  --color-gold-100: #f4e6c3;
+
+  /* Feedback */
+  --color-success: #2f6b4f;
+  --color-success-100: #dcece2;
+  --color-danger: #ad3d2c;
+  --color-danger-100: #f6ddd6;
+  --color-info: #2c5e82;
+  --color-info-100: #dde9f1;
+
+  --shadow-color: 30 25% 12%;
+
+  --animate-fade-up: fade-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-pop: pop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  --animate-shimmer: shimmer 1.6s ease-in-out infinite;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes pop {
+    0% {
+      opacity: 0;
+      transform: scale(0.85);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  @keyframes shimmer {
+    0%,
+    100% {
+      opacity: 0.4;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+}
+
+/* ---------- dark mode (opt-in via Settings > Dark Mode) ---------- */
+/* The app defaults to the warm light palette everywhere; dark mode is an
+   explicit user choice (not prefers-color-scheme), toggled by stamping
+   data-theme="dark" on <html> from Settings. Because every surface in this
+   app reads its color from these tokens, this one block re-themes the whole
+   product. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-cream: #1b1712;
+  --color-cream-deep: #262019;
+  --color-surface: #221c15;
+  --color-ink: #f3ead9;
+  --color-ink-soft: #d8c9b3;
+  --color-ink-faint: #a3937d;
+  --color-line: #3a2f22;
+
+  --color-green-900: #0e1d15;
+  --color-green-700: #3f7350;
+  --color-green-600: #4c8560;
+  --color-green-500: #5c9670;
+  --color-green-100: #223226;
+  --color-green-50: #1c2820;
+
+  --color-terracotta-700: #e08a4f;
+  --color-terracotta-600: #e08a4f;
+  --color-terracotta-500: #d97d43;
+  --color-terracotta-100: #3a2418;
+  --color-terracotta-50: #2c1c13;
+
+  --color-gold-600: #d9b465;
+  --color-gold-500: #c99a3e;
+  --color-gold-100: #3a2f18;
+
+  --color-success: #5c9670;
+  --color-success-100: #1c2820;
+  --color-danger: #e08171;
+  --color-danger-100: #3a2118;
+  --color-info: #7db2d9;
+  --color-info-100: #1a2733;
+}
+
+/* ---------- base ---------- */
+
+html {
+  -webkit-tap-highlight-color: transparent;
+  color-scheme: light;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  min-height: 100dvh;
+  /* subtle woven hairline texture — reinforces the craft/textile identity */
+  background-image:
+    repeating-linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--color-terracotta-500) 5%, transparent) 0px,
+      color-mix(in srgb, var(--color-terracotta-500) 5%, transparent) 1px,
+      transparent 1px,
+      transparent 13px
+    );
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+::selection {
+  background: var(--color-terracotta-500);
+  color: var(--color-cream);
+}
+
+:focus-visible {
+  outline: 2.5px solid var(--color-terracotta-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* thin, warm scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-terracotta-500) transparent;
+}
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+  border-radius: 8px;
+}
+
+/* ---------- signature "handmade" primitives ---------- */
+
+/* Asymmetric corner radius — a small deliberate irregularity that reads as
+   crafted rather than machine-stamped. Used on cards, sheets, and photos. */
+.card-craft {
+  border-radius: 22px 22px 22px 6px;
+}
+.card-craft-alt {
+  border-radius: 6px 22px 22px 22px;
+}
+
+.shadow-craft {
+  box-shadow:
+    0 1px 2px hsl(var(--shadow-color) / 0.06),
+    0 8px 20px -6px hsl(var(--shadow-color) / 0.14);
+}
+.shadow-craft-lg {
+  box-shadow:
+    0 4px 10px hsl(var(--shadow-color) / 0.08),
+    0 20px 40px -12px hsl(var(--shadow-color) / 0.22);
+}
+
+/* running-stitch divider — a nod to hand-stitched textile work, used instead
+   of plain <hr> lines throughout the app */
+.divider-stitch {
+  border: none;
+  height: 1px;
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--color-line) 0,
+    var(--color-line) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+}
+
+.divider-stitch-v {
+  width: 1px;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    var(--color-line) 0,
+    var(--color-line) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+}
+
+/* small terracotta dash used before section eyebrows/labels */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-terracotta-600);
+}
+.eyebrow::before {
+  content: "";
+  width: 14px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--color-terracotta-500);
+  display: inline-block;
+}
+
+.tap-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.safe-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
