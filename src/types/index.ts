@@ -41,6 +41,8 @@ export interface Product {
   rating: number;
   reviewsCount: number;
   quantity: number;
+  image?: string;
+  avatar?: string;
   illustration: IllustrationKey;
   descriptionEn: string;
   descriptionHi: string;

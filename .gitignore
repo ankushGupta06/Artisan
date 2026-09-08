@@ -23,3 +23,15 @@ dist-ssr
 *.sln
 *.sw?
 AI_Guide_ArtisanAI_Demo_Frontend.md
+
+# Local env (keep .env.example tracked)
+.env
+.env.local
+.env.*.local
+
+# Python AI microservice
+ai-service/venv/
+ai-service/.venv/
+ai-service/.env
+ai-service/__pycache__/
+ai-service/**/__pycache__/

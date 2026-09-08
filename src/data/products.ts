@@ -5,6 +5,7 @@ export const CURRENT_ARTISAN_ID = "sita";
 // Products owned by the demo artisan (Sita Handicrafts) plus a handful from
 // other artisans so Marketplace/Buyer Mode feel like a real multi-vendor
 // marketplace rather than a single seller's shop.
+
 export const INITIAL_PRODUCTS: Product[] = [
   {
     id: "p1",
@@ -21,17 +22,26 @@ export const INITIAL_PRODUCTS: Product[] = [
     rating: 4.8,
     reviewsCount: 132,
     quantity: 5,
+    image: "https://loremflickr.com/600/600/saree,silk?lock=11",
+    avatar: "https://i.pravatar.cc/150?img=45",
     illustration: "saree",
     descriptionEn:
       "A beautifully handcrafted Chanderi silk saree featuring intricate hand zari work along the border and pallu. Woven by skilled artisans using techniques passed down for generations.",
     descriptionHi:
       "हाथ से तैयार की गई खूबसूरत चंदेरी सिल्क साड़ी, जिसमें किनारे और पल्लू पर बारीक हाथ की जरी का काम किया गया है।",
-    keywords: ["Chanderi", "Silk Saree", "Handcrafted", "Zari", "Indian Textile"],
+    keywords: [
+      "Chanderi",
+      "Silk Saree",
+      "Handcrafted",
+      "Zari",
+      "Indian Textile",
+    ],
     status: "published",
     views: 612,
     enquiriesCount: 9,
     createdAt: "2026-08-02T09:15:00.000Z",
   },
+
   {
     id: "p2",
     name: "Hand-painted Terracotta Vase",
@@ -47,17 +57,26 @@ export const INITIAL_PRODUCTS: Product[] = [
     rating: 4.7,
     reviewsCount: 58,
     quantity: 9,
+    image: "https://loremflickr.com/600/600/terracotta,vase?lock=12",
+    avatar: "https://i.pravatar.cc/150?img=45",
     illustration: "pottery",
     descriptionEn:
       "A hand-painted terracotta decorative vase, shaped on a traditional potter's wheel and finished with folk motifs in natural pigments.",
     descriptionHi:
       "पारंपरिक चाक पर बनाई गई और प्राकृतिक रंगों से सजाई गई हाथ से पेंट की गई टेराकोटा की सजावटी फूलदान।",
-    keywords: ["Terracotta", "Vase", "Hand-painted", "Pottery", "Home Decor"],
+    keywords: [
+      "Terracotta",
+      "Vase",
+      "Hand-painted",
+      "Pottery",
+      "Home Decor",
+    ],
     status: "published",
     views: 388,
     enquiriesCount: 4,
     createdAt: "2026-08-10T11:40:00.000Z",
   },
+
   {
     id: "p3",
     name: "Handwoven Cotton Bag",
@@ -73,17 +92,26 @@ export const INITIAL_PRODUCTS: Product[] = [
     rating: 4.9,
     reviewsCount: 204,
     quantity: 24,
+    image: "https://loremflickr.com/600/600/tote,bag?lock=13",
+    avatar: "https://i.pravatar.cc/150?img=45",
     illustration: "bag",
     descriptionEn:
       "A sturdy handwoven cotton market bag, perfect for everyday use. Woven on a handloom using durable, breathable cotton yarn.",
     descriptionHi:
       "रोज़मर्रा के इस्तेमाल के लिए हैंडलूम पर बुना गया मज़बूत सूती बैग, टिकाऊ और आरामदायक सूती धागे से तैयार।",
-    keywords: ["Cotton Bag", "Handwoven", "Handloom", "Eco-friendly", "Tote"],
+    keywords: [
+      "Cotton Bag",
+      "Handwoven",
+      "Handloom",
+      "Eco-friendly",
+      "Tote",
+    ],
     status: "published",
     views: 940,
     enquiriesCount: 21,
     createdAt: "2026-07-28T08:05:00.000Z",
   },
+
   {
     id: "p4",
     name: "Brass Dhokra Figurine",
@@ -99,17 +127,26 @@ export const INITIAL_PRODUCTS: Product[] = [
     rating: 4.8,
     reviewsCount: 47,
     quantity: 6,
+    image: "https://loremflickr.com/600/600/brass,sculpture?lock=27",
+    avatar: "https://i.pravatar.cc/150?img=12",
     illustration: "brass",
     descriptionEn:
       "A tribal-style brass figurine made using the ancient Dhokra lost-wax casting technique, showcasing exceptional craftsmanship.",
     descriptionHi:
       "प्राचीन ढोकरा लॉस्ट-वैक्स तकनीक से बनी आदिवासी शैली की पीतल की मूर्ति, बेहतरीन कारीगरी का उदाहरण।",
-    keywords: ["Dhokra", "Brass", "Figurine", "Tribal Art", "Handicraft"],
+    keywords: [
+      "Dhokra",
+      "Brass",
+      "Figurine",
+      "Tribal Art",
+      "Handicraft",
+    ],
     status: "published",
     views: 275,
     enquiriesCount: 6,
     createdAt: "2026-08-15T14:20:00.000Z",
   },
+
   {
     id: "p5",
     name: "Bamboo Storage Basket",
@@ -125,17 +162,26 @@ export const INITIAL_PRODUCTS: Product[] = [
     rating: 4.6,
     reviewsCount: 39,
     quantity: 14,
+    image: "https://loremflickr.com/600/600/bamboo,basket?lock=15",
+    avatar: "https://i.pravatar.cc/150?img=45",
     illustration: "basket",
     descriptionEn:
       "A hand-woven bamboo storage basket, sturdy and lightweight — ideal for organizing homes with an earthy, natural finish.",
     descriptionHi:
       "हाथ से बुनी गई बांस की टोकरी, मज़बूत और हल्की — घर को व्यवस्थित रखने के लिए एक प्राकृतिक विकल्प।",
-    keywords: ["Bamboo", "Basket", "Storage", "Handwoven", "Eco-friendly"],
+    keywords: [
+      "Bamboo",
+      "Basket",
+      "Storage",
+      "Handwoven",
+      "Eco-friendly",
+    ],
     status: "published",
     views: 201,
     enquiriesCount: 3,
     createdAt: "2026-08-20T07:50:00.000Z",
   },
+
   {
     id: "p6",
     name: "Kundan Jewellery Set",
@@ -151,17 +197,26 @@ export const INITIAL_PRODUCTS: Product[] = [
     rating: 4.7,
     reviewsCount: 81,
     quantity: 8,
+    image: "https://loremflickr.com/600/600/jewellery,gold?lock=16",
+    avatar: "https://i.pravatar.cc/150?img=32",
     illustration: "jewellery",
     descriptionEn:
       "An elegant handcrafted Kundan jewellery set, hand-set with beads and stones in a traditional Rajasthani style.",
     descriptionHi:
       "पारंपरिक राजस्थानी शैली में हाथ से तैयार किया गया खूबसूरत कुंदन आभूषण सेट।",
-    keywords: ["Kundan", "Jewellery", "Handcrafted", "Rajasthani", "Bridal"],
+    keywords: [
+      "Kundan",
+      "Jewellery",
+      "Handcrafted",
+      "Rajasthani",
+      "Bridal",
+    ],
     status: "published",
     views: 512,
     enquiriesCount: 12,
     createdAt: "2026-08-05T16:10:00.000Z",
   },
+
   {
     id: "p7",
     name: "Hand-carved Wooden Elephant",
@@ -177,17 +232,26 @@ export const INITIAL_PRODUCTS: Product[] = [
     rating: 4.6,
     reviewsCount: 33,
     quantity: 7,
+    image: "https://loremflickr.com/600/600/wooden,elephant?lock=17",
+    avatar: "https://i.pravatar.cc/150?img=59",
     illustration: "woodcraft",
     descriptionEn:
       "A hand-carved wooden elephant figurine, chiseled from solid sheesham wood by master carvers — a timeless decor piece.",
     descriptionHi:
       "ठोस शीशम की लकड़ी से कुशल कारीगरों द्वारा हाथ से तराशी गई हाथी की मूर्ति — एक शाश्वत सजावटी वस्तु।",
-    keywords: ["Wooden", "Elephant", "Hand-carved", "Sheesham", "Decor"],
+    keywords: [
+      "Wooden",
+      "Elephant",
+      "Hand-carved",
+      "Sheesham",
+      "Decor",
+    ],
     status: "published",
     views: 168,
     enquiriesCount: 2,
     createdAt: "2026-08-22T10:30:00.000Z",
   },
+
   {
     id: "p8",
     name: "Madhubani Painted Wall Decor",
@@ -203,12 +267,20 @@ export const INITIAL_PRODUCTS: Product[] = [
     rating: 4.9,
     reviewsCount: 71,
     quantity: 11,
+    image: "https://loremflickr.com/600/600/madhubani,painting?lock=18",
+    avatar: "https://i.pravatar.cc/150?img=45",
     illustration: "home-decor",
     descriptionEn:
       "A vibrant Madhubani painted wall decor piece, hand-painted with natural dyes in traditional folk patterns from Bihar.",
     descriptionHi:
       "प्राकृतिक रंगों से हाथ से बनाई गई जीवंत मधुबनी पेंटिंग वाली दीवार सजावट, बिहार की पारंपरिक लोक शैली में।",
-    keywords: ["Madhubani", "Wall Decor", "Folk Art", "Hand-painted", "Bihar"],
+    keywords: [
+      "Madhubani",
+      "Wall Decor",
+      "Folk Art",
+      "Hand-painted",
+      "Bihar",
+    ],
     status: "published",
     views: 322,
     enquiriesCount: 7,
