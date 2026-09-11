@@ -61,6 +61,7 @@ export default function Catalog() {
     descriptionEn: draft.descriptionEn ?? "",
     descriptionHi: draft.descriptionHi ?? "",
     keywords: draft.keywords?.join(", ") ?? "",
+    image: null,
   });
 
   // Sample-product demos and browsers without MediaRecorder use the mock path;
@@ -180,21 +181,68 @@ export default function Catalog() {
 
     setStage("result");
   }
+  async function uploadProductImage(file: File): Promise<string> {
+  const formData = new FormData();
 
-  function continueToPricing() {
+  formData.append("image", file);
+
+  const response = await fetch(
+    "http://localhost:5000/api/products/image",
+    {
+      method: "POST",
+      body: formData,
+    }
+  );
+
+  const data = await response.json();
+
+  if (!response.ok || !data.success) {
+    throw new Error(data.message || "Failed to upload product image");
+  }
+
+  return data.imageUrl;
+}
+
+  async function continueToPricing() {
+  try {
+    let imageUrl = draft.image;
+
+    // Upload only if a new image was selected
+    if (form.image) {
+      showToast("Uploading product image...", "success");
+
+      imageUrl = await uploadProductImage(form.image);
+    }
+
     updateDraft({
       name: form.name,
       category: form.category as ProductCategory,
       material: form.material,
       craft: form.craft,
       color: form.color,
-      productionTimeDays: Number(form.productionTimeDays) || undefined,
+      productionTimeDays:
+        Number(form.productionTimeDays) || undefined,
       descriptionEn: form.descriptionEn,
       descriptionHi: form.descriptionHi,
-      keywords: form.keywords.split(",").map((k) => k.trim()).filter(Boolean),
+      keywords: form.keywords
+        .split(",")
+        .map((k) => k.trim())
+        .filter(Boolean),
+
+      // NEW
+      image: imageUrl,
     });
+
     navigate("/add-product/pricing");
+  } catch (error) {
+    showToast(
+      error instanceof Error
+        ? error.message
+        : "Failed to upload product image",
+      "error"
+    );
   }
+}
 
   const seconds = Math.floor(recorder.durationMs / 1000);
 

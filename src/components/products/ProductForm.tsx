@@ -12,6 +12,7 @@ export interface ProductFormValues {
   descriptionEn: string;
   descriptionHi: string;
   keywords: string; // comma separated in the UI
+  image: File | null;
 }
 
 export const CATEGORIES: ProductCategory[] = [
@@ -64,6 +65,29 @@ export function ProductForm({
 }) {
   return (
     <div className="space-y-4">
+      <Field label="Product Image">
+  <div className="space-y-3">
+    <input
+      type="file"
+      accept="image/jpeg,image/png,image/webp,image/gif"
+      className={inputClass}
+      onChange={(e) => {
+        const file = e.target.files?.[0] ?? null;
+        onChange({ image: file });
+      }}
+    />
+
+    {values.image && (
+      <div className="overflow-hidden rounded-2xl border border-(--color-line)">
+        <img
+          src={URL.createObjectURL(values.image)}
+          alt="Product preview"
+          className="h-48 w-full object-cover"
+        />
+      </div>
+    )}
+  </div>
+</Field>
       <Field label="Product Name" error={errors.name} required>
         <input
           className={inputClass}
